@@ -12,7 +12,7 @@ export class TourComponent implements OnInit {
 
 
   @Input() tour: { Id:number,RecordStatusId:number ,Title: string, Description: string  }
-  @Input() id: number;
+
 
 
   constructor(private tourService: TourService) {
@@ -20,10 +20,16 @@ export class TourComponent implements OnInit {
 
   ngOnInit() {
   }
+  onUpdateTitle(event: Event){
+
+    this.tourService.updateTitle(this.tour.Id, (<HTMLInputElement>event.target).value);
+   
+  }
+
 
   onSetTo(title: string) {
-      this.tourService.updateTitle(this.id, title);
-      this.tourService.titleUpdated.emit(title);
+      this.tourService.updateTitle(this.tour.Id, title);
+     // this.tourService.titleUpdated.emit(title);
      // this.tourService.updateStatus(this.id, status);
     //  this.tourService.statusUpdated.emit(status);
   }

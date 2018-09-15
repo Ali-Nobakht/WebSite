@@ -2,11 +2,10 @@
 <br>
 <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <h5>{{ tour.Description }}</h5>
+        <h5>{{ tour.Title }}</h5>
+        <!-- <input type="text" value="{{tour.Title}}"   (input)="onUpdateTitle($event)" /> -->
         <hr>
-        <p>وضعیت این حساب کاربری: {{ tour.Title }}</p>
-        <button class="btn btn-default" (click)="onSetTo('فعال')">تغییر وضعیت به «فعال»</button>
-        <button class="btn btn-default" (click)="onSetTo('غیرفعال')">تغییر وضعیت به «غیرفعال»</button>
-        <button class="btn btn-default" (click)="onSetTo('مخفی')">تغییر وضعیت به «مخفی»</button>
+        <p>وضعیت این حساب کاربری: {{ tour.Description }}</p>
+        <input type="button" value="ویرایش" (click)="EditTour()"  />
     </div>
 </div>

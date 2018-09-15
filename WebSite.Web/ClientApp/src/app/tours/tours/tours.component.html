@@ -5,9 +5,6 @@
         </div>
     </div>
     <hr>
-    <app-tour
-            *ngFor="let t of tours; let i= index"
-            [id]="i"
-            [tour]="t"    >
+    <app-tour *ngFor="let t of tours" [tour]="t">
     </app-tour>
-</div> 
+</div>

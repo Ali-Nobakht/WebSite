@@ -17,6 +17,8 @@ export class TourService {
         },
     ];
     constructor() {
+        
+  
 
     }
 
@@ -24,8 +26,10 @@ export class TourService {
 
 
     addTour( title: string, description: string) {
+
+        var idMax=Math.max.apply(null,this.tours.map(x=>x["Id"]));
         this.tours.push({
-            Id: 1,
+            Id: idMax+1,
             RecordStatusId: 1,
             Title: title,
             Description: description
@@ -33,7 +37,8 @@ export class TourService {
     }
 
     updateTitle(id: number, title: string) {
-        this.tours[id].Title = title;
+        this.tours.find(x=>x.Id==id).Title=title;
+        //  this.tours[id].Title = title;
     }
 
 }
