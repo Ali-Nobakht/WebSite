@@ -1,36 +1,40 @@
-import {EventEmitter, Injectable} from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 
 @Injectable()
 export class TourService {
-  accounts = [
-    {
-        name: 'حساب کابری مدیر کل',
-        status: 'فعال'
-    },
-    {
-        name: 'اکانت تست',
-        status: 'غیرفعال'
-    },
-    {
-        name: 'حساب کاربری مخفی',
-        status: 'مخفی'
+    tours = [
+        {
+            Id: 1,
+            RecordStatusId: 1,
+            Title: "تور شماره یک",
+            Description: "توضیحات",
+        },
+        {
+            Id: 2,
+            RecordStatusId: 1,
+            Title: "تور شماره دو",
+            Description: "توضیحات",
+        },
+    ];
+    constructor() {
+
     }
-];
-constructor(){
- 
-}
 
-statusUpdated = new EventEmitter<string>();
+    titleUpdated = new EventEmitter<string>();
 
-addAccount(name: string, status:string){
-    this.accounts.push({name: name, status: status});
-   // this.loggingService.logStatusChanged(status);
-}
 
-updateStatus(id: number, status:string){
-    this.accounts[id].status = status;
-   // this.loggingService.logStatusChanged(status);
-}
+    addTour( title: string, description: string) {
+        this.tours.push({
+            Id: 1,
+            RecordStatusId: 1,
+            Title: title,
+            Description: description
+        });
+    }
+
+    updateTitle(id: number, title: string) {
+        this.tours[id].Title = title;
+    }
 
 }
 interface TourModel {
@@ -38,4 +42,4 @@ interface TourModel {
     RecordStatusId: number;
     Title: string;
     Description: string;
-  }
+}

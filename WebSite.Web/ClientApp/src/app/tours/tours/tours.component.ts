@@ -8,15 +8,15 @@ import {TourService} from "../tour.service";
 })
 export class ToursComponent implements OnInit {
 
-  accounts: { name: string, status: string }[] = []
- 
+  tours: {Id:number,RecordStatusId:number ,Title: string, Description: string }[] = []
+
     constructor(private tourService: TourService) {
  
     }
  
     ngOnInit() {
-        this.accounts = this.tourService.accounts;
-        console.log('account update')
+        this.tours = this.tourService.tours;
+     
     }
 
 }

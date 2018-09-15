@@ -14,8 +14,8 @@ export class TourEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCreateAccount(accountName: string, accountStatus: string) {
-      this.tourService.addAccount(accountName, accountStatus);
+  onCreateTour(accountName: string, accountStatus: string) {
+      this.tourService.addTour(accountName, accountStatus);
       
   }
 }

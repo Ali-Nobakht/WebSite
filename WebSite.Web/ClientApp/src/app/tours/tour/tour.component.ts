@@ -8,7 +8,10 @@ import {TourService} from "../tour.service";
 })
 export class TourComponent implements OnInit {
 
-  @Input() account: { name: string, status: string }
+
+
+
+  @Input() tour: { Id:number,RecordStatusId:number ,Title: string, Description: string  }
   @Input() id: number;
 
 
@@ -18,10 +21,11 @@ export class TourComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSetTo(status: string) {
-      this.tourService.updateStatus(this.id, status);
-      this.tourService.statusUpdated.emit(status);
-      // this.loggingService.logStatusChanged(status);
+  onSetTo(title: string) {
+      this.tourService.updateTitle(this.id, title);
+      this.tourService.titleUpdated.emit(title);
+     // this.tourService.updateStatus(this.id, status);
+    //  this.tourService.statusUpdated.emit(status);
   }
 
 }
