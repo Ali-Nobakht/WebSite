@@ -1,0 +1,13 @@
+<div class="container" dir="rtl" style="margin-top: 30px;">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-tour-edit></app-tour-edit>
+        </div>
+    </div>
+    <hr>
+    <app-tour
+            *ngFor="let acc of accounts; let i= index"
+            [id]="i"
+            [account]="acc"    >
+    </app-tour>
+</div> 

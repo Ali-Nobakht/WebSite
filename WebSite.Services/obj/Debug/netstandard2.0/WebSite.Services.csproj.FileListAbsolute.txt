@@ -1,0 +1,14 @@
+D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.csprojAssemblyReference.cache
+D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.csproj.CoreCompileInputs.cache
+D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.AssemblyInfoInputs.cache
+D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.AssemblyInfo.cs
+D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Services.deps.json
+D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Services.dll
+D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Services.pdb
+D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Dal.dll
+D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Entity.dll
+D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Entity.pdb
+D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Dal.pdb
+D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.csproj.CopyComplete
+D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.dll
+D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.pdb

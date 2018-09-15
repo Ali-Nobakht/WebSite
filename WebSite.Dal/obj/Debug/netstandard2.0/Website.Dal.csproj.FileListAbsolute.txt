@@ -1,0 +1,12 @@
+D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.csprojAssemblyReference.cache
+D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.csproj.CoreCompileInputs.cache
+D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.AssemblyInfoInputs.cache
+D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.AssemblyInfo.cs
+D:\AngularCore\WebSite\WebSite.Dal\bin\Debug\netstandard2.0\WebSite.Dal.deps.json
+D:\AngularCore\WebSite\WebSite.Dal\bin\Debug\netstandard2.0\WebSite.Dal.dll
+D:\AngularCore\WebSite\WebSite.Dal\bin\Debug\netstandard2.0\WebSite.Dal.pdb
+D:\AngularCore\WebSite\WebSite.Dal\bin\Debug\netstandard2.0\WebSite.Entity.dll
+D:\AngularCore\WebSite\WebSite.Dal\bin\Debug\netstandard2.0\WebSite.Entity.pdb
+D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.csproj.CopyComplete
+D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.dll
+D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.pdb

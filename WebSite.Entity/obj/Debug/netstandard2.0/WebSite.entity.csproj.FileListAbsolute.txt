@@ -1,0 +1,9 @@
+D:\AngularCore\WebSite\WebSite.entity\obj\Debug\netstandard2.0\WebSite.entity.csprojAssemblyReference.cache
+D:\AngularCore\WebSite\WebSite.entity\obj\Debug\netstandard2.0\WebSite.entity.csproj.CoreCompileInputs.cache
+D:\AngularCore\WebSite\WebSite.entity\obj\Debug\netstandard2.0\WebSite.entity.AssemblyInfoInputs.cache
+D:\AngularCore\WebSite\WebSite.entity\obj\Debug\netstandard2.0\WebSite.entity.AssemblyInfo.cs
+D:\AngularCore\WebSite\WebSite.Entity\bin\Debug\netstandard2.0\WebSite.Entity.deps.json
+D:\AngularCore\WebSite\WebSite.Entity\bin\Debug\netstandard2.0\WebSite.Entity.dll
+D:\AngularCore\WebSite\WebSite.Entity\bin\Debug\netstandard2.0\WebSite.Entity.pdb
+D:\AngularCore\WebSite\WebSite.Entity\obj\Debug\netstandard2.0\WebSite.Entity.dll
+D:\AngularCore\WebSite\WebSite.Entity\obj\Debug\netstandard2.0\WebSite.Entity.pdb

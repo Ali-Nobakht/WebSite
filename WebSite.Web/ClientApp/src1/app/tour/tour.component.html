@@ -1,0 +1,16 @@
+<p>
+  tour works!{{name}}
+</p>
+
+<div class="row">
+    <div class="col-xs-12">
+        <label for="name">نام سرور</label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="serverName">
+
+        <label for="description">توضیحات سرور</label>
+        <input type="text" id="description" class="form-control" [(ngModel)]="serverContent">
+    </div>
+</div>
+
+<button class="btn btn-primary" (click)="onCreateLocalServer()">سرور  جدید</button>
+
