@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -14,7 +14,17 @@ import { TourEditComponent } from './Tours/tour-edit/tour-edit.component';
 import { ToursComponent } from './Tours/tours/tours.component';
 
 
-import {TourService} from "./Tours/tour.service";
+import { TourService } from "./Tours/tour.service";
+
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'counter', component: CounterComponent },
+  { path: 'fetch-data', component: FetchDataComponent },
+  { path: 'Tours', component: ToursComponent },
+  { path: 'Tours/:id/edit', component: TourEditComponent }
+];
+
 
 @NgModule({
   declarations: [
@@ -31,12 +41,7 @@ import {TourService} from "./Tours/tour.service";
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'Tours', component: ToursComponent },
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [TourService],
   bootstrap: [AppComponent]

@@ -1,10 +1,8 @@
 <div class="container" dir="rtl" style="margin-top: 30px;">
     <div class="row">
         <div class="col-xs-12">
-            <app-tour-edit></app-tour-edit>
+            <app-tour *ngFor="let t of tours" [tour]="t">
+            </app-tour>
         </div>
     </div>
-    <hr>
-    <app-tour *ngFor="let t of tours" [tour]="t">
-    </app-tour>
 </div>

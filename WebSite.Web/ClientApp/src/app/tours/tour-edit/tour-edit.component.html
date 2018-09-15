@@ -1,22 +1,15 @@
 <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="form-group">
-            <label>نام کاربری</label>
-            <input
-                    type="text"
-                    class="form-control"
-                    #accountName>
+            <label>عنوان</label>
+            <input type="text" class="form-control" [(ngModel)]="titleTour">
         </div>
         <div class="form-group">
-            <select class="form-control" #status>
-                <option value="فعال">فعال</option>
-                <option value="غیرفعال">غیرفعال</option>
-                <option value="مخفی">مخفی</option>
-            </select>
+            <label>توضیحات</label>
+            <input type="text" class="form-control" [(ngModel)]="descTour">
+
         </div>
-        <button
-                class="btn btn-primary"
-                (click)="onCreateTour(accountName.value, status.value)">
+        <button class="btn btn-primary" (click)="onCreateTour()">
             اضافه کردن کاربر
         </button>
     </div>
