@@ -2,10 +2,10 @@
 <br>
 <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <h5>{{ tour.Title }}</h5>
+        <h5>{{ tour.title }}</h5>
         <!-- <input type="text" value="{{tour.Title}}"   (input)="onUpdateTitle($event)" /> -->
         <hr>
-        <p>وضعیت این حساب کاربری: {{ tour.Description }}</p>
+        <p>وضعیت این حساب کاربری: {{ tour.description }}</p>
         <input type="button" value="ویرایش" (click)="EditTour()" />
 
         <a [routerLink]="['/Tours', tour.Id, 'edit']" 

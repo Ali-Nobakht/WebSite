@@ -22,15 +22,15 @@ export class TourEditComponent implements OnInit {
     if(id==undefined)
     return false;
 
-    this.tour = this.tourService.getTour(id);
+  //  this.tour = this.tourService.getTour(id);
 
-    this.titleTour = this.tour.Title;
-    this.descTour = this.tour.Description;
+  //  this.titleTour = this.tour.Title;
+ //   this.descTour = this.tour.Description;
  
   }
 
   onCreateTour(accountName: string, accountStatus: string) {
-    this.tourService.addTour(accountName, accountStatus);
+  //  this.tourService.addTour(accountName, accountStatus);
 
   }
 }

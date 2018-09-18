@@ -13,26 +13,11 @@ namespace WebSite.Web.Controllers {
         private readonly IServiceTour _sericeTuor;
         private readonly IUnitOfWork _unitOfWork;
         public SampleDataController (IServiceTour sericeTuor, IUnitOfWork unitOfWork) {
-            Console.WriteLine ("--------------------------------");
-            Console.WriteLine ("--------------------------------");
+  
 
             _sericeTuor = sericeTuor;
             _unitOfWork = unitOfWork;
-            var tour = new TourModel {
-                Title = "Title",
-                Description = "Description",
-                //   DatePunch=DateTime.Now,
-                RecordStatusId = 1
-            };
-            _sericeTuor.AddTour (tour);
-            _unitOfWork.SaveAllChanges ();
-
-            var c = _sericeTuor.ListTour ();
-            if (c.Any ())
-                Console.WriteLine (c.First ().Title);
-
-            else
-                Console.WriteLine ("ISNULL ISNULL ISNULL ISNULL ISNULL ISNULL ISNULL ISNULL ISNULL ");
+           
 
         }
         private static string[] Summaries = new [] {
@@ -51,7 +36,7 @@ namespace WebSite.Web.Controllers {
         [HttpGet ("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts () {
             var test = "";
-            var c = _sericeTuor.ListTour ();
+            var c = _sericeTuor.GetTours ();
             if (c.Any ())
                 test = c.First ().Title;
             var rng = new Random ();
