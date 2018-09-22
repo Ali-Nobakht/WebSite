@@ -2,15 +2,18 @@
     <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="form-group">
             <label>عنوان</label>
-            <input type="text" class="form-control" [(ngModel)]="titleTour">
+           
+            <input type="text" class="form-control" [ngModel]="tour?.title" 
+            (ngModelChange)="tour.title = $event">
         </div>
         <div class="form-group">
             <label>توضیحات</label>
-            <input type="text" class="form-control" [(ngModel)]="descTour">
+            <input type="text" class="form-control" [ngModel]="tour?.description" 
+            (ngModelChange)="tour.description = $event">
 
         </div>
-        <button class="btn btn-primary" (click)="onCreateTour()">
-            اضافه کردن کاربر
+        <button class="btn btn-primary" (click)="onSaveTour()">
+           {{btnValue}}
         </button>
     </div>
 </div>

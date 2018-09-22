@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TourService,TourModel} from "../tour.service";
+import { TourService, TourModel } from "../tour.service";
 
 
 @Component({
@@ -12,14 +12,12 @@ export class ToursComponent implements OnInit {
   //tours: {Id:number,RecordStatusId:number ,Title: string, Description: string }[] = []
   tours: TourModel[] = []
 
-    constructor(private tourService: TourService) {
- 
-    }
- 
-    ngOnInit() {
-        this.tours = this.tourService.get();
-       
-     
-    }
+  constructor(private tourService: TourService) {
+
+  }
+
+  ngOnInit() {
+    this.tourService.getTours().subscribe(data => this.tours = data);
+  }
 
 }

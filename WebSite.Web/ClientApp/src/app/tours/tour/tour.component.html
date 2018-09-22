@@ -6,12 +6,9 @@
         <!-- <input type="text" value="{{tour.Title}}"   (input)="onUpdateTitle($event)" /> -->
         <hr>
         <p>وضعیت این حساب کاربری: {{ tour.description }}</p>
-        <input type="button" value="ویرایش" (click)="EditTour()" />
+      
 
-        <a [routerLink]="['/Tours', tour.Id, 'edit']" 
-        [queryParams]="{allowEdit: 1}" 
-        [fragment]="'loading'" 
-        href="#">
-            {{ tour.Title }} </a>
+        <a [routerLink]="['/Tours', tour.id, 'edit']" [queryParams]="{allowEdit: 1}" [fragment]="'loading'" href="#">
+            ویرایش </a>
     </div>
 </div>

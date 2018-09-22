@@ -1,7 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
-import { TourService } from "../tour.service";
+import { TourService, TourModel } from "../tour.service";
 
 @Component({
   selector: 'app-tour-edit',
@@ -9,28 +9,32 @@ import { TourService } from "../tour.service";
   styleUrls: ['./tour-edit.component.css']
 })
 export class TourEditComponent implements OnInit {
-  tour: { Id: number, RecordStatusId: number, Title: string, Description: string }
+  tour: TourModel;
 
-  titleTour = '';
-  descTour = '';
+
+  btnValue = 'ثبت';
   constructor(private tourService: TourService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
- 
-    if(id==undefined)
-    return false;
 
-  //  this.tour = this.tourService.getTour(id);
+    if (id == undefined||id==0)
+      return false;
+      this.btnValue = 'ویرایش';
+    this.tourService.getTour(id).subscribe(data => {
 
-  //  this.titleTour = this.tour.Title;
- //   this.descTour = this.tour.Description;
- 
-  }
+      this.tour = data;
+      
+    });
+    console.log(this.tour);
 
-  onCreateTour(accountName: string, accountStatus: string) {
-  //  this.tourService.addTour(accountName, accountStatus);
 
   }
-}
+
+  onSaveTour(accountName: string, accountStatus: string) {
+    this.tourService.add(this.tour).subscribe();
+    }
+    //  this.tourService.addTour(accountName, accountStatus);
+
+  }

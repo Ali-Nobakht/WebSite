@@ -25,6 +25,7 @@ namespace WebSite.Web.Controllers {
         public TourModel[] GetTour () {
 
             var list = _sericeTuor.GetTours ().ToArray ();
+            Console.WriteLine("Testtttt:::"+list.Count());
 
             return list;
         }
@@ -42,6 +43,7 @@ namespace WebSite.Web.Controllers {
             if (tour == null) {
                 return NotFound ();
             }
+      
 
             return Ok (tour);
         }
@@ -65,6 +67,9 @@ namespace WebSite.Web.Controllers {
         // POST: api/Tour
         [HttpPost]
         public async Task<IActionResult> PostTour ([FromBody] TourModel tour) {
+            Console.WriteLine("PostTour");
+            Console.WriteLine(tour.Title);
+
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
