@@ -25,7 +25,7 @@ namespace WebSite.Web.Controllers {
         public TourModel[] GetTour () {
 
             var list = _sericeTuor.GetTours ().ToArray ();
-            Console.WriteLine("Testtttt:::"+list.Count());
+            Console.WriteLine ("Testtttt:::" + list.Count ());
 
             return list;
         }
@@ -43,7 +43,6 @@ namespace WebSite.Web.Controllers {
             if (tour == null) {
                 return NotFound ();
             }
-      
 
             return Ok (tour);
         }
@@ -59,21 +58,24 @@ namespace WebSite.Web.Controllers {
                 return BadRequest ();
             }
 
-            if (_sericeTuor.UpdateTour (tour))
+            if (await _sericeTuor.UpdateTourAsync (tour)) {
+                _unitOfWork.SaveAllChanges ();
                 return Ok (tour);
+            }
             return NotFound ();
         }
 
         // POST: api/Tour
         [HttpPost]
         public async Task<IActionResult> PostTour ([FromBody] TourModel tour) {
-            Console.WriteLine("PostTour");
-            Console.WriteLine(tour.Title);
+            Console.WriteLine ("PostTour");
+            Console.WriteLine (tour.Title);
 
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
             await _sericeTuor.AddTourAsync (tour);
+            await _unitOfWork.SaveAllChangesAsync ();
 
             return CreatedAtAction ("GetTour", new { id = tour.Id }, tour);
         }
@@ -81,11 +83,16 @@ namespace WebSite.Web.Controllers {
         // DELETE: api/Tour/5
         [HttpDelete ("{id}")]
         public async Task<IActionResult> DeleteTour ([FromRoute] int id) {
+       
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
             if (await _sericeTuor.DeleteTourAsunc (id))
-                return Ok (id);
+               {
+
+await _unitOfWork.SaveAllChangesAsync();
+return Ok (id);
+               } 
             return NotFound ();
         }
 

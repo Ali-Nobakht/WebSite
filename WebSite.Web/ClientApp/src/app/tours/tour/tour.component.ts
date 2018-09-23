@@ -37,5 +37,8 @@ export class TourComponent implements OnInit {
      // this.tourService.updateStatus(this.id, status);
     //  this.tourService.statusUpdated.emit(status);
   }
-
+  onDeleteTour(id:number)
+  {
+this.tourService.remove(id).subscribe();
+  }
 }

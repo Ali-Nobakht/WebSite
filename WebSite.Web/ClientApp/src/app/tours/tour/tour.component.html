@@ -8,7 +8,10 @@
         <p>وضعیت این حساب کاربری: {{ tour.description }}</p>
       
 
-        <a [routerLink]="['/Tours', tour.id, 'edit']" [queryParams]="{allowEdit: 1}" [fragment]="'loading'" href="#">
+        <a class="btn btn-primary" [routerLink]="['/Tours', tour.id, 'edit']" [queryParams]="{allowEdit: 1}" [fragment]="'loading'" href="#">
             ویرایش </a>
+            <button class="btn btn-danger" (click)="onDeleteTour(tour.id)">
+                حذف
+              </button>
     </div>
 </div>

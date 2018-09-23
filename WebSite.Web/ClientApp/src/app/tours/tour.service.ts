@@ -32,8 +32,9 @@ export class TourService {
     return this.http.post(this.accessPointUrl, payload, { headers: this.headers });
   }
 
-  public remove(payload) {
-    return this.http.delete(this.accessPointUrl + '/' + payload.id, { headers: this.headers });
+  public remove(id) {
+    
+    return this.http.delete(this.accessPointUrl + '/' + id, { headers: this.headers });
   }
 
   public update(payload) {

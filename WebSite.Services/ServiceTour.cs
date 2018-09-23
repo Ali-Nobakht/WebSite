@@ -21,22 +21,29 @@ namespace Website.Services {
             await _tour.AddAsync (tour);
             return true;
         }
-        public bool UpdateTour (TourModel tour) {
-            _tour.Update (tour);
+        public async Task<bool> UpdateTourAsync (TourModel tour) {
+            var model = await _tour.FirstOrDefaultAsync (x => x.Id == tour.Id);
+            if (model == null)
+                return false;
+            _unitOfWork.Entry (model).CurrentValues.SetValues (tour);
             return true;
         }
         public async Task<bool> SaveTourAsync (TourModel tour) {
             if (tour.Id > 0)
-                return UpdateTour (tour);
+                return await UpdateTourAsync (tour);
             else
                 return await AddTourAsync (tour);
 
         }
         public async Task<bool> DeleteTourAsunc (int id) {
+
             var tour = await _tour.FirstOrDefaultAsync (x => x.Id == id);
             if (tour == null)
+
                 return false;
-            tour.RecordStatusId = 1;
+
+            _tour.Remove (tour);
+
             return true;
 
         }
