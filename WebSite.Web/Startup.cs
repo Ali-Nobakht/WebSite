@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Website.Services;
 using WebSite.Dal;
 using WebSite.Services.Contracts;
+using WebSite.Web.Custom;
 
 namespace WebSite.Web {
     public class Startup {
@@ -26,6 +27,7 @@ namespace WebSite.Web {
                 configuration.RootPath = "ClientApp/dist";
             });
 
+            services.AddScoped<LoggingActionFilter> ();
             // Add application services.
             services.AddTransient<IServiceTour, ServiceTour> ();
             services.AddSingleton<IUnitOfWork, AppDbContext> ();
