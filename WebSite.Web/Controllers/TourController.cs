@@ -11,7 +11,7 @@ using WebSite.Web.Custom;
 namespace WebSite.Web.Controllers {
     [Produces ("application/json")]
     [Route ("api/Tour")]
-    [ServiceFilter(typeof(LoggingActionFilter))]
+  
     //  [Authorize]
     public class TourController : Controller {
         private readonly IServiceTour _sericeTuor;

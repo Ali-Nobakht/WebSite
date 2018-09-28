@@ -12,3 +12,17 @@ D:\AngularCore\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Dal.pdb
 D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.csproj.CopyComplete
 D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.dll
 D:\AngularCore\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.pdb
+D:\Programing\GitHub\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Services.deps.json
+D:\Programing\GitHub\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Services.dll
+D:\Programing\GitHub\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Services.pdb
+D:\Programing\GitHub\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Dal.dll
+D:\Programing\GitHub\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Entity.dll
+D:\Programing\GitHub\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Entity.pdb
+D:\Programing\GitHub\WebSite\WebSite.Services\bin\Debug\netstandard2.0\WebSite.Dal.pdb
+D:\Programing\GitHub\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.csprojAssemblyReference.cache
+D:\Programing\GitHub\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.csproj.CoreCompileInputs.cache
+D:\Programing\GitHub\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.AssemblyInfoInputs.cache
+D:\Programing\GitHub\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.AssemblyInfo.cs
+D:\Programing\GitHub\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.csproj.CopyComplete
+D:\Programing\GitHub\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.dll
+D:\Programing\GitHub\WebSite\WebSite.Services\obj\Debug\netstandard2.0\WebSite.Services.pdb

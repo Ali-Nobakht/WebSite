@@ -3028,13 +3028,13 @@
     },
     "WebSite.Dal/1.0.0": {
       "type": "project",
-      "path": "../WebSite.Dal/WebSite.Dal.csproj",
-      "msbuildProject": "../WebSite.Dal/WebSite.Dal.csproj"
+      "path": "../WebSite.dal/WebSite.Dal.csproj",
+      "msbuildProject": "../WebSite.dal/WebSite.Dal.csproj"
     },
     "WebSite.Entity/1.0.0": {
       "type": "project",
-      "path": "../WebSite.Entity/WebSite.Entity.csproj",
-      "msbuildProject": "../WebSite.Entity/WebSite.Entity.csproj"
+      "path": "../WebSite.entity/WebSite.Entity.csproj",
+      "msbuildProject": "../WebSite.entity/WebSite.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3046,38 +3046,40 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ali\\.nuget\\packages\\": {},
+    "C:\\Users\\Nobakht-PC\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AngularCore\\WebSite\\WebSite.Services\\WebSite.Services.csproj",
+      "projectUniqueName": "D:\\Programing\\GitHub\\WebSite\\WebSite.Services\\WebSite.Services.csproj",
       "projectName": "WebSite.Services",
-      "projectPath": "D:\\AngularCore\\WebSite\\WebSite.Services\\WebSite.Services.csproj",
-      "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
-      "outputPath": "D:\\AngularCore\\WebSite\\WebSite.Services\\obj\\",
+      "projectPath": "D:\\Programing\\GitHub\\WebSite\\WebSite.Services\\WebSite.Services.csproj",
+      "packagesPath": "C:\\Users\\Nobakht-PC\\.nuget\\packages\\",
+      "outputPath": "D:\\Programing\\GitHub\\WebSite\\WebSite.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Nobakht-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\AngularCore\\WebSite\\WebSite.Dal\\WebSite.Dal.csproj": {
-              "projectPath": "D:\\AngularCore\\WebSite\\WebSite.Dal\\WebSite.Dal.csproj"
+            "D:\\Programing\\GitHub\\WebSite\\WebSite.Dal\\WebSite.Dal.csproj": {
+              "projectPath": "D:\\Programing\\GitHub\\WebSite\\WebSite.Dal\\WebSite.Dal.csproj"
             },
-            "D:\\AngularCore\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj": {
-              "projectPath": "D:\\AngularCore\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj"
+            "D:\\Programing\\GitHub\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj": {
+              "projectPath": "D:\\Programing\\GitHub\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj"
             }
           }
         }

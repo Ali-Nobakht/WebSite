@@ -10,3 +10,15 @@ D:\AngularCore\WebSite\WebSite.Dal\bin\Debug\netstandard2.0\WebSite.Entity.pdb
 D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.csproj.CopyComplete
 D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.dll
 D:\AngularCore\WebSite\WebSite.Dal\obj\Debug\netstandard2.0\WebSite.Dal.pdb
+D:\Programing\GitHub\WebSite\WebSite.dal\bin\Debug\netstandard2.0\WebSite.Dal.deps.json
+D:\Programing\GitHub\WebSite\WebSite.dal\bin\Debug\netstandard2.0\WebSite.Dal.dll
+D:\Programing\GitHub\WebSite\WebSite.dal\bin\Debug\netstandard2.0\WebSite.Dal.pdb
+D:\Programing\GitHub\WebSite\WebSite.dal\bin\Debug\netstandard2.0\WebSite.Entity.dll
+D:\Programing\GitHub\WebSite\WebSite.dal\bin\Debug\netstandard2.0\WebSite.Entity.pdb
+D:\Programing\GitHub\WebSite\WebSite.dal\obj\Debug\netstandard2.0\WebSite.Dal.csprojAssemblyReference.cache
+D:\Programing\GitHub\WebSite\WebSite.dal\obj\Debug\netstandard2.0\WebSite.Dal.csproj.CoreCompileInputs.cache
+D:\Programing\GitHub\WebSite\WebSite.dal\obj\Debug\netstandard2.0\WebSite.Dal.AssemblyInfoInputs.cache
+D:\Programing\GitHub\WebSite\WebSite.dal\obj\Debug\netstandard2.0\WebSite.Dal.AssemblyInfo.cs
+D:\Programing\GitHub\WebSite\WebSite.dal\obj\Debug\netstandard2.0\WebSite.Dal.csproj.CopyComplete
+D:\Programing\GitHub\WebSite\WebSite.dal\obj\Debug\netstandard2.0\WebSite.Dal.dll
+D:\Programing\GitHub\WebSite\WebSite.dal\obj\Debug\netstandard2.0\WebSite.Dal.pdb
