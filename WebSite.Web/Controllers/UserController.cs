@@ -14,10 +14,10 @@ namespace WebSite.Web.Controllers {
   
     //  [Authorize]
     public class UserController : Controller {
-        private readonly IServiceTour _serviceTuor;
+        private readonly ITourService _serviceTuor;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserController (IServiceTour serviceTuor, IUnitOfWork unitOfWork) {
+        public UserController (ITourService serviceTuor, IUnitOfWork unitOfWork) {
             _serviceTuor = serviceTuor;
             _unitOfWork = unitOfWork;
         }

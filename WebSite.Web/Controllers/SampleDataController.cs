@@ -10,9 +10,9 @@ using WebSite.Services.Contracts;
 namespace WebSite.Web.Controllers {
     [Route ("api/[controller]")]
     public class SampleDataController : Controller {
-        private readonly IServiceTour _sericeTuor;
+        private readonly ITourService _sericeTuor;
         private readonly IUnitOfWork _unitOfWork;
-        public SampleDataController (IServiceTour sericeTuor, IUnitOfWork unitOfWork) {
+        public SampleDataController (ITourService sericeTuor, IUnitOfWork unitOfWork) {
   
 
             _sericeTuor = sericeTuor;

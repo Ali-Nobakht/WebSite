@@ -14,11 +14,11 @@ namespace WebSite.Web.Controllers {
   
     //  [Authorize]
     public class TourController : Controller {
-        private readonly IServiceTour _serviceTuor;
+        private readonly ITourService _tourService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public TourController (IServiceTour serviceTuor, IUnitOfWork unitOfWork) {
-            _serviceTuor = serviceTuor;
+        public TourController (ITourService tourService, IUnitOfWork unitOfWork) {
+            _tourService = tourService;
             _unitOfWork = unitOfWork;
         }
 
@@ -26,7 +26,7 @@ namespace WebSite.Web.Controllers {
         [HttpGet]
         public async Task<TourModel[]> GetTour () {
 
-              var list =(await _serviceTuor.ListAsync()).ToArray ();
+              var list =(await _tourService.ListAsync()).ToArray ();
 
             return list;
         }
@@ -39,7 +39,7 @@ namespace WebSite.Web.Controllers {
                 return BadRequest (ModelState);
             }
 
-            var tour = await _serviceTuor.ModelAsync (id);
+            var tour = await _tourService.ModelAsync (id);
 
             if (tour == null) {
                 return NotFound ();
@@ -59,7 +59,7 @@ namespace WebSite.Web.Controllers {
                 return BadRequest ();
             }
 
-            if (await _serviceTuor.UpdateAsync (tour)) {
+            if (await _tourService.UpdateAsync (tour)) {
                 _unitOfWork.SaveAllChanges ();
                 return Ok (tour);
             }
@@ -75,7 +75,7 @@ namespace WebSite.Web.Controllers {
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
-            await _serviceTuor.AddAsync (tour);
+            await _tourService.AddAsync (tour);
             await _unitOfWork.SaveAllChangesAsync ();
 
             return CreatedAtAction ("GetTour", new { id = tour.Id }, tour);
@@ -88,7 +88,7 @@ namespace WebSite.Web.Controllers {
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
-            if (await _serviceTuor.DeleteAsync (id))
+            if (await _tourService.DeleteAsync (id))
                {
 
 await _unitOfWork.SaveAllChangesAsync();

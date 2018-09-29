@@ -54,10 +54,10 @@ namespace WebSite.Web
                 var dynamicProxy = new ProxyGenerator();
 
 
-                config.For<IServiceTour>()
+                config.For<ITourService>()
                  .DecorateAllWith(myTypeInterface =>
                         dynamicProxy.CreateInterfaceProxyWithTarget(myTypeInterface, new LoggingInterceptor()))
-                 .Use<ServiceTour>();
+                 .Use<TourService>();
 
                 config.For<IUnitOfWork>()
     .DecorateAllWith(myTypeInterface =>
