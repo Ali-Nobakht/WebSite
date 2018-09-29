@@ -3012,8 +3012,8 @@
     },
     "WebSite.Entity/1.0.0": {
       "type": "project",
-      "path": "../WebSite.entity/WebSite.Entity.csproj",
-      "msbuildProject": "../WebSite.entity/WebSite.Entity.csproj"
+      "path": "../WebSite.Entity/WebSite.Entity.csproj",
+      "msbuildProject": "../WebSite.Entity/WebSite.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3026,37 +3026,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nobakht-PC\\.nuget\\packages\\": {},
+    "C:\\Users\\Ali\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programing\\GitHub\\WebSite\\WebSite.dal\\WebSite.Dal.csproj",
+      "projectUniqueName": "D:\\AngularCore\\WebSite\\WebSite.Dal\\WebSite.Dal.csproj",
       "projectName": "WebSite.Dal",
-      "projectPath": "D:\\Programing\\GitHub\\WebSite\\WebSite.dal\\WebSite.Dal.csproj",
-      "packagesPath": "C:\\Users\\Nobakht-PC\\.nuget\\packages\\",
-      "outputPath": "D:\\Programing\\GitHub\\WebSite\\WebSite.dal\\obj\\",
+      "projectPath": "D:\\AngularCore\\WebSite\\WebSite.Dal\\WebSite.Dal.csproj",
+      "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
+      "outputPath": "D:\\AngularCore\\WebSite\\WebSite.Dal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nobakht-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Programing\\GitHub\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj": {
-              "projectPath": "D:\\Programing\\GitHub\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj"
+            "D:\\AngularCore\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj": {
+              "projectPath": "D:\\AngularCore\\WebSite\\WebSite.Entity\\WebSite.Entity.csproj"
             }
           }
         }
