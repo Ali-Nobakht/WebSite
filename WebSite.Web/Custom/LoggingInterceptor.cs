@@ -8,20 +8,21 @@ namespace WebSite.Web.Custom {
         {
             try
             {
-                Console.WriteLine("Logging On Start.");
+                Console.WriteLine("Logging On Start :"+invocation.Method.Name);
                 
                 invocation.Proceed(); //فراخوانی متد اصلی در اینجا صورت می‌گیرد
 
-                Console.WriteLine("Logging On Success.");
+                Console.WriteLine("Logging On Success :"+invocation.Method.Name);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Logging On Error.");
+                Console.WriteLine("Logging On Error :"+invocation.Method.Name);
+                Console.WriteLine("Message :"+ex.Message);
                 throw;
             }
             finally
             {
-                Console.WriteLine("Logging On Exit.");
+                Console.WriteLine("Logging On Exit :"+invocation.Method.Name);
             }
         }
     }

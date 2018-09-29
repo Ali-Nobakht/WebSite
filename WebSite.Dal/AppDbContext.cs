@@ -21,7 +21,8 @@ namespace WebSite.Dal {
 
             optionsBuilder.UseSqlServer (ConnectionSp);
         }
-        public DbSet<TourModel> Products { get; set; }
+        public DbSet<TourModel> Tours { get; set; }
+        public DbSet<UserModel> Users {get;set;}
 
         protected override void OnModelCreating (ModelBuilder builder) {
 

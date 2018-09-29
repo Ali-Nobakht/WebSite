@@ -35,15 +35,12 @@ namespace WebSite.Web.Controllers {
 
         [HttpGet ("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts () {
-            var test = "";
-            var c = _sericeTuor.GetTours ();
-            if (c.Any ())
-                test = c.First ().Title;
+          
             var rng = new Random ();
             return Enumerable.Range (1, 5).Select (index => new WeatherForecast {
                 DateFormatted = DateTime.Now.AddDays (index).ToString ("d"),
                     TemperatureC = rng.Next (-20, 55),
-                    Summary = Summaries[rng.Next (Summaries.Length)] + " - " + test
+                    Summary = Summaries[rng.Next (Summaries.Length)] 
             });
         }
 

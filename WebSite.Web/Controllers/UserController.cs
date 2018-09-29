@@ -10,14 +10,14 @@ using WebSite.Web.Custom;
 
 namespace WebSite.Web.Controllers {
     [Produces ("application/json")]
-    [Route ("api/Tour")]
+    [Route ("api/User")]
   
     //  [Authorize]
-    public class TourController : Controller {
+    public class UserController : Controller {
         private readonly IServiceTour _serviceTuor;
         private readonly IUnitOfWork _unitOfWork;
 
-        public TourController (IServiceTour serviceTuor, IUnitOfWork unitOfWork) {
+        public UserController (IServiceTour serviceTuor, IUnitOfWork unitOfWork) {
             _serviceTuor = serviceTuor;
             _unitOfWork = unitOfWork;
         }
@@ -26,7 +26,7 @@ namespace WebSite.Web.Controllers {
         [HttpGet]
         public async Task<TourModel[]> GetTour () {
 
-              var list =(await _serviceTuor.ListAsync()).ToArray ();
+            var list =(await _serviceTuor.ListAsync()).ToArray ();
 
             return list;
         }
