@@ -11,5 +11,6 @@ namespace WebSite.Services.Contracts {
         Task<bool> DeleteAsync (int id);
         Task<IEnumerable<TModel>> ListAsync ();
         Task<TModel> ModelAsync (int id);
+        Task<bool> SaveAllChangesAsync();
     }
 }
