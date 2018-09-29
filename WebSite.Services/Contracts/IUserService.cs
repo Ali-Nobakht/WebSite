@@ -4,7 +4,7 @@ using WebSite.Entity.Models;
 using System.Threading.Tasks;
 
 namespace WebSite.Services.Contracts {
-    public interface IServiceUser : IService<UserModel>{
+    public interface IUserService : IService<UserModel>{
      
 
     }

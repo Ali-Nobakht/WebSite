@@ -11,89 +11,86 @@ using WebSite.Web.Custom;
 namespace WebSite.Web.Controllers {
     [Produces ("application/json")]
     [Route ("api/User")]
-  
+
     //  [Authorize]
     public class UserController : Controller {
-        private readonly ITourService _serviceTuor;
+        private readonly IUserService _userService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserController (ITourService serviceTuor, IUnitOfWork unitOfWork) {
-            _serviceTuor = serviceTuor;
+        public UserController (IUserService userService, IUnitOfWork unitOfWork) {
+            _userService = userService;
             _unitOfWork = unitOfWork;
         }
 
         // GET: api/Workouts
         [HttpGet]
-        public async Task<TourModel[]> GetTour () {
+        public async Task<UserModel[]> Getuser () {
 
-            var list =(await _serviceTuor.ListAsync()).ToArray ();
+            var list = (await _userService.ListAsync ()).ToArray ();
 
             return list;
         }
 
         // GET: api/Workouts/5
         [HttpGet ("{id}")]
-        public async Task<IActionResult> GetTour ([FromRoute] int id) {
+        public async Task<IActionResult> Getuser ([FromRoute] int id) {
 
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
 
-            var tour = await _serviceTuor.ModelAsync (id);
+            var user = await _userService.ModelAsync (id);
 
-            if (tour == null) {
+            if (user == null) {
                 return NotFound ();
             }
 
-            return Ok (tour);
+            return Ok (user);
         }
 
         // PUT: api/Workouts/5
         [HttpPut ("{id}")]
-        public async Task<IActionResult> PutTour ([FromRoute] int id, [FromBody] TourModel tour) {
+        public async Task<IActionResult> Putuser ([FromRoute] int id, [FromBody] UserModel user) {
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
 
-            if (id != tour.Id) {
+            if (id != user.Id) {
                 return BadRequest ();
             }
 
-            if (await _serviceTuor.UpdateAsync (tour)) {
+            if (await _userService.UpdateAsync (user)) {
                 _unitOfWork.SaveAllChanges ();
-                return Ok (tour);
+                return Ok (user);
             }
             return NotFound ();
         }
 
-        // POST: api/Tour
+        // POST: api/user
         [HttpPost]
-        public async Task<IActionResult> PostTour ([FromBody] TourModel tour) {
-            Console.WriteLine ("PostTour");
-            Console.WriteLine (tour.Title);
+        public async Task<IActionResult> Postuser ([FromBody] UserModel user) {
 
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
-            await _serviceTuor.AddAsync (tour);
+            await _userService.AddAsync (user);
             await _unitOfWork.SaveAllChangesAsync ();
 
-            return CreatedAtAction ("GetTour", new { id = tour.Id }, tour);
+            return CreatedAtAction ("Getuser", new { id = user.Id }, user);
         }
 
-        // DELETE: api/Tour/5
+        // DELETE: api/user/5
         [HttpDelete ("{id}")]
-        public async Task<IActionResult> DeleteTour ([FromRoute] int id) {
-       
+        public async Task<IActionResult> Deleteuser ([FromRoute] int id) {
+
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);
             }
-            if (await _serviceTuor.DeleteAsync (id))
-               {
+            if (await _userService.DeleteAsync (id)) {
 
-await _unitOfWork.SaveAllChangesAsync();
-return Ok (id);
-               } 
+                await _unitOfWork.SaveAllChangesAsync ();
+                return Ok (id);
+            }
             return NotFound ();
         }
 
