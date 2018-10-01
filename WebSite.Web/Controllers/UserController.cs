@@ -69,6 +69,7 @@ namespace WebSite.Web.Controllers {
         // POST: api/user
         [HttpPost]
         public async Task<IActionResult> Postuser ([FromBody] UserModel user) {
+            Console.WriteLine("dfgggggggggggggggggggggggggggggggggggggggggggggggggggggg");
 
             if (!ModelState.IsValid) {
                 return BadRequest (ModelState);

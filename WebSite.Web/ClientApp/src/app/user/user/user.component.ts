@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  Input, OnInit } from '@angular/core';
+
+import { UserService,UserModel } from "../user.service";
+
 
 @Component({
   selector: 'app-user',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+@Input() model: UserModel;
+  constructor(private userSrv: UserService) {
+  }
 
   ngOnInit() {
   }
-
+  onDelete(id: number) {
+  this.userSrv.remove(id).subscribe();
+  }
 }

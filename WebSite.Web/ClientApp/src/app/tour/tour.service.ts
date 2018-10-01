@@ -4,32 +4,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class TourService {
 
-  public tours: TourModel[];
-  public tour: TourModel;
   private headers: HttpHeaders;
   private accessPointUrl: string;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
     this.accessPointUrl = baseUrl + 'api/Tour';
-    console.log(this.accessPointUrl);
-
-
   }
 
 
   public getTours() {
-    console.log('Service')
-    return this.http.get<TourModel[]>(this.accessPointUrl, {headers: this.headers});
+     return this.http.get<TourModel[]>(this.accessPointUrl, {headers: this.headers});
   }
   public getTour(id:number) {
-    console.log("ID::::"+id);
    return this.http.get<TourModel>(this.accessPointUrl+'/'+id ,{ headers: this.headers });
      
   }
   public add(payload) {
-    console.log(payload);
-    return this.http.post(this.accessPointUrl, payload, { headers: this.headers });
+     return this.http.post(this.accessPointUrl, payload, { headers: this.headers });
   }
 
   public remove(id) {
@@ -44,7 +36,7 @@ export class TourService {
 
 }
 export interface TourModel {
-  id;
+  id: number;
   recordStatusId: number;
   title: string;
   description: string;

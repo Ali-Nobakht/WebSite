@@ -15,7 +15,9 @@ import { ToursComponent } from './Tour/tours/tours.component';
 
 
 import { TourService } from "./Tour/tour.service";
-import { UserComponent } from './user/user/user.component';
+import { UserService } from "./User/user.service";
+
+import { UserComponent } from './User/user/user.component';
 import { UsersComponent } from './User/users/users.component';
 import { UserEditComponent } from './User/user-edit/user-edit.component';
 
@@ -27,7 +29,7 @@ const appRoutes: Routes = [
   { path: 'Tours', component: ToursComponent },
   { path: 'Tours/:id/edit', component: TourEditComponent },
   { path: 'Users', component: UsersComponent },
-  { path: 'Tours/:id/edit', component: UserEditComponent }
+  { path: 'Users/:id/edit', component: UserEditComponent }
 ];
 
 
@@ -51,7 +53,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [TourService],
+  providers: [TourService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

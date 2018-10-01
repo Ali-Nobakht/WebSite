@@ -20,4 +20,5 @@ export class ToursComponent implements OnInit {
     this.tourService.getTours().subscribe(data => this.tours = data);
   }
 
+  
 }

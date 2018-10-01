@@ -1,10 +1,10 @@
 <a [routerLink]="['/Tours', 0, 'edit']" [queryParams]="{allowEdit: 1}" [fragment]="'loading'" href="#"> جدید </a>
 
-<div class="container" dir="rtl" style="margin-top: 30px;">
+<div class="container-fluid" dir="rtl" style="margin-top: 30px;">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-md-6 col-lg-4 col-sm-12" *ngFor="let tour of tours">
 
-            <app-tour *ngFor="let t of tours" [tour]="t">
+            <app-tour [tour]="tour">
             </app-tour>
         </div>
     </div>

@@ -63,7 +63,11 @@ namespace WebSite.Web
     .DecorateAllWith(myTypeInterface =>
            dynamicProxy.CreateInterfaceProxyWithTarget(myTypeInterface, new LoggingInterceptor()))
     .Use<AppDbContext>();
-
+    
+      config.For<IUserService>()
+                 .DecorateAllWith(myTypeInterface =>
+                        dynamicProxy.CreateInterfaceProxyWithTarget(myTypeInterface, new LoggingInterceptor()))
+                 .Use<UserService>();
                 //Populate the container using the service collection
                 config.Populate(services);
 

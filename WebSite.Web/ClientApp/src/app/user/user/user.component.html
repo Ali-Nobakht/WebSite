@@ -1,3 +1,14 @@
-<p>
-  user works!
-</p>
+<div class="borderBlackWhite">
+  <div>
+      <h5>{{ model.userName }}</h5>
+      <!-- <input type="text" value="{{tour.Title}}"   (input)="onUpdateTitle($event)" /> -->
+      <hr>
+      <p>وضعیت این حساب کاربری: {{ model.firstName }}</p>
+      <a class="btn btn-primary" [routerLink]="['/Users', user.id, 'edit']" [queryParams]="{allowEdit: 1}" [fragment]="'loading'"
+          href="#">
+          ویرایش </a>
+      <button class="btn btn-danger" (click)="onDelete(user.id)">
+          حذف
+      </button>
+  </div>
+</div>
