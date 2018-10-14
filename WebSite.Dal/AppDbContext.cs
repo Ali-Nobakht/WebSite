@@ -14,7 +14,7 @@ namespace WebSite.Dal {
         private static string ConnectionSp => new SqlConnectionStringBuilder {
             Password = "123",
                 UserID = "sa",
-                DataSource = @".\SQLEXPRESS",
+                DataSource = @".",
                 InitialCatalog = "WebSite",
         }.ConnectionString;
         protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder) {
@@ -23,6 +23,7 @@ namespace WebSite.Dal {
         }
         public DbSet<TourModel> Tours { get; set; }
         public DbSet<UserModel> Users {get;set;}
+		public DbSet<MenuModel> Menus { get; set; }
 
         protected override void OnModelCreating (ModelBuilder builder) {
 

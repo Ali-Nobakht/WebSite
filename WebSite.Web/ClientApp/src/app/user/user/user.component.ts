@@ -1,6 +1,6 @@
 import { Component,  Input, OnInit } from '@angular/core';
 
-import { UserService,UserModel } from "../user.service";
+import { UserService,IUserModel as UserModel } from "../user.service";
 
 
 @Component({
@@ -13,6 +13,7 @@ export class UserComponent implements OnInit {
 @Input() model: UserModel;
   constructor(private userSrv: UserService) {
   }
+
 
   ngOnInit() {
   }

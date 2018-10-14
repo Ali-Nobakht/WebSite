@@ -1,14 +1,40 @@
 <div class="borderBlackWhite">
-  <div>
-      <h5>{{ model.userName }}</h5>
-      <!-- <input type="text" value="{{tour.Title}}"   (input)="onUpdateTitle($event)" /> -->
-      <hr>
-      <p>وضعیت این حساب کاربری: {{ model.firstName }}</p>
-      <a class="btn btn-primary" [routerLink]="['/Users', user.id, 'edit']" [queryParams]="{allowEdit: 1}" [fragment]="'loading'"
-          href="#">
-          ویرایش </a>
-      <button class="btn btn-danger" (click)="onDelete(user.id)">
-          حذف
-      </button>
-  </div>
+    <div>
+        <h5>{{ model.userName }}</h5>
+        <!-- <input type="text" value="{{tour.Title}}"   (input)="onUpdateTitle($event)" /> -->
+        <hr>
+        <p>وضعیت این حساب کاربری: {{ model.firstName }}</p>
+        <a *appUserAccess="'Edit'" class="btn btn-primary" [routerLink]="['/Users', model.id, 'edit']" [queryParams]="{allowEdit: 1}"
+            [fragment]="'loading'" href="#">
+            ویرایش </a>
+        <button *appUserAccess="'Delete'" class="btn btn-danger" (click)="onDelete(model.id)">
+            حذف
+        </button >
+    </div>
 </div>
+
+<div class="container">
+    <h2>Modal Example</h2>
+    <!-- Trigger the modal with a button -->
+    <!-- Modal -->
+    <div class="modal fade" id="dialog-form">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-user-sample></app-user-sample>

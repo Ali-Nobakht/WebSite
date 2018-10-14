@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, UserModel } from "../user.service";
+import { UserService, IUserModel as UserModel } from "../user.service";
 
 @Component({
   selector: 'app-users',
@@ -8,16 +8,19 @@ import { UserService, UserModel } from "../user.service";
 })
 export class UsersComponent implements OnInit {
 
- //tours: {Id:number,RecordStatusId:number ,Title: string, Description: string }[] = []
- usersm: UserModel[] = []
+  //tours: {Id:number,RecordStatusId:number ,Title: string, Description: string }[] = []
+  users: UserModel[] = []
 
- constructor(private userSrv: UserService) {
+  constructor(private userSrv: UserService) {
 
- }
+  }
 
- ngOnInit() {
-   this.userSrv.getUsers().subscribe(data => this.usersm = data);
- }
+  ngOnInit() {
+    this.userSrv.getUsers().subscribe(data => {
+    this.users = data;
+   
+    });
+  }
 
- 
+
 }

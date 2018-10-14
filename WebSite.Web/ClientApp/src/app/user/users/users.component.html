@@ -2,9 +2,8 @@
 
 <div class="container-fluid" dir="rtl" style="margin-top: 30px;">
   <div class="row">
-    <div class="col-md-6 col-lg-4 col-sm-12" *ngFor="let model of usersm">
-
-      <app-user [model]="model">
+    <div class="col-md-6 col-lg-4 col-sm-12" *ngFor="let user of users">
+      <app-user [model]="user">
       </app-user>
     </div>
   </div>

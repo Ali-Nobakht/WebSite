@@ -1,99 +1,140 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using WebSite.Dal;
 using WebSite.Entity.Models;
 using WebSite.Services.Contracts;
 using WebSite.Web.Custom;
 
-namespace WebSite.Web.Controllers {
-    [Produces ("application/json")]
-    [Route ("api/User")]
+namespace WebSite.Web.Controllers
+{
+	[Produces("application/json")]
+	[Route("api/User")]
 
-    //  [Authorize]
-    public class UserController : Controller {
-        private readonly IUserService _userService;
-        private readonly IUnitOfWork _unitOfWork;
+	//  [Authorize]
+	public class UserController : Controller
+	{
+		private readonly IUserService _userService;
+		private readonly IUnitOfWork _unitOfWork;
 
-        public UserController (IUserService userService, IUnitOfWork unitOfWork) {
-            _userService = userService;
-            _unitOfWork = unitOfWork;
-        }
+		public UserController(IUserService userService, IUnitOfWork unitOfWork)
+		{
+			_userService = userService;
+			_unitOfWork = unitOfWork;
+		}
 
-        // GET: api/Workouts
-        [HttpGet]
-        public async Task<UserModel[]> Getuser () {
+		// GET: api/Workouts
+		[HttpGet]
+		public async Task<UserModel[]> Getuser()
+		{
 
-            var list = (await _userService.ListAsync ()).ToArray ();
+			var list = (await _userService.ListAsync()).ToArray();
 
-            return list;
-        }
+			return list;
+		}
 
-        // GET: api/Workouts/5
-        [HttpGet ("{id}")]
-        public async Task<IActionResult> Getuser ([FromRoute] int id) {
+		[HttpGet("[action]")]
+		public UserModel CurrentUser()
+		{
+			var cu = Request.Cookies["CurrentUser"];
+			if (cu != null)
+				return JsonConvert.DeserializeObject<UserModel>(cu);
 
-            if (!ModelState.IsValid) {
-                return BadRequest (ModelState);
-            }
+			var currentUser = new UserModel
+			{
+				FirstName = DateTime.Now.ToLongTimeString(),
+				LastName = "Nobakht"
+			};
 
-            var user = await _userService.ModelAsync (id);
+			Response.Cookies.Append("CurrentUser", JsonConvert.SerializeObject(currentUser),new CookieOptions
+			{
+				Expires = DateTimeOffset.Now.AddMinutes(1)
+			});
+			return currentUser;
 
-            if (user == null) {
-                return NotFound ();
-            }
+		}
+	
 
-            return Ok (user);
-        }
+		// GET: api/Workouts/5
+		[HttpGet("{id}")]
+		public async Task<IActionResult> Getuser([FromRoute] int id)
+		{
 
-        // PUT: api/Workouts/5
-        [HttpPut ("{id}")]
-        public async Task<IActionResult> Putuser ([FromRoute] int id, [FromBody] UserModel user) {
-            if (!ModelState.IsValid) {
-                return BadRequest (ModelState);
-            }
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
 
-            if (id != user.Id) {
-                return BadRequest ();
-            }
+			var user = await _userService.ModelAsync(id);
 
-            if (await _userService.UpdateAsync (user)) {
-                _unitOfWork.SaveAllChanges ();
-                return Ok (user);
-            }
-            return NotFound ();
-        }
+			if (user == null)
+			{
+				return NotFound();
+			}
 
-        // POST: api/user
-        [HttpPost]
-        public async Task<IActionResult> Postuser ([FromBody] UserModel user) {
-            Console.WriteLine("dfgggggggggggggggggggggggggggggggggggggggggggggggggggggg");
+			return Ok(user);
+		}
 
-            if (!ModelState.IsValid) {
-                return BadRequest (ModelState);
-            }
-            await _userService.AddAsync (user);
-            await _unitOfWork.SaveAllChangesAsync ();
+		// PUT: api/Workouts/5
+		[HttpPut("{id}")]
+		public async Task<IActionResult> Putuser([FromRoute] int id, [FromBody] UserModel user)
+		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
 
-            return CreatedAtAction ("Getuser", new { id = user.Id }, user);
-        }
+			if (id != user.Id)
+			{
+				return BadRequest();
+			}
 
-        // DELETE: api/user/5
-        [HttpDelete ("{id}")]
-        public async Task<IActionResult> Deleteuser ([FromRoute] int id) {
+			if (await _userService.UpdateAsync(user))
+			{
+				_unitOfWork.SaveAllChanges();
+				return Ok(user);
+			}
+			return NotFound();
+		}
 
-            if (!ModelState.IsValid) {
-                return BadRequest (ModelState);
-            }
-            if (await _userService.DeleteAsync (id)) {
+		// POST: api/user
+		[HttpPost]
+		public async Task<IActionResult> Postuser([FromBody] UserModel user)
+		{
+			Console.WriteLine("dfgggggggggggggggggggggggggggggggggggggggggggggggggggggg");
 
-                await _unitOfWork.SaveAllChangesAsync ();
-                return Ok (id);
-            }
-            return NotFound ();
-        }
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+			await _userService.AddAsync(user);
+			await _unitOfWork.SaveAllChangesAsync();
 
-    }
+			return CreatedAtAction("Getuser", new { id = user.Id }, user);
+		}
+
+		// DELETE: api/user/5
+		[HttpDelete("{id}")]
+		public async Task<IActionResult> Deleteuser([FromRoute] int id)
+		{
+
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+			if (await _userService.DeleteAsync(id))
+			{
+
+				await _unitOfWork.SaveAllChangesAsync();
+				return Ok(id);
+			}
+			return NotFound();
+		}
+
+	}
 }

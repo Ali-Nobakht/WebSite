@@ -38,6 +38,17 @@
                         <span class='glyphicon glyphicon-user'></span> Users
                     </a>
                 </li>
+
+                <li >
+                    <a class="btnModel" data-Title="Login">
+                        <span class='glyphicon glyphicon-user'></span> login
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/Editur"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-edit'></span> Editur
+                    </a>
+                </li>                
             </ul>
         </div>
     </div>

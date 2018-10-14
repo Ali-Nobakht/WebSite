@@ -20,12 +20,17 @@ import { UserService } from "./User/user.service";
 import { UserComponent } from './User/user/user.component';
 import { UsersComponent } from './User/users/users.component';
 import { UserEditComponent } from './User/user-edit/user-edit.component';
+import { UserSampleComponent } from './User/user-sample/user-sample.component';
+import { EditurComponent } from './editur/editur.component';
+import { UserInfoComponent } from './User/user-info/user-info.component';
+import { UserAccessDirective } from './User/user-access.directive';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'counter', component: CounterComponent },
   { path: 'fetch-data', component: FetchDataComponent },
+  { path: 'Editur', component: EditurComponent },
   { path: 'Tours', component: ToursComponent },
   { path: 'Tours/:id/edit', component: TourEditComponent },
   { path: 'Users', component: UsersComponent },
@@ -45,7 +50,11 @@ const appRoutes: Routes = [
     ToursComponent,
     UserComponent,
     UsersComponent,
-    UserEditComponent
+    UserEditComponent,
+    UserSampleComponent,
+    EditurComponent,
+    UserInfoComponent,
+    UserAccessDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

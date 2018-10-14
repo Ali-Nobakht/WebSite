@@ -1,7 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
-import {UserService,UserModel} from "../user.service";
+import {UserService,IUserModel as UserModel} from "../user.service";
 
 @Component({
   selector: 'app-user-edit',

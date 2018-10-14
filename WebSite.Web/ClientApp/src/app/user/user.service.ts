@@ -14,12 +14,16 @@ export class UserService {
 
 
   public getUsers() {
-    console.log('Service')
-    return this.http.get<UserModel[]>(this.accessPointUrl, { headers: this.headers });
+
+    return this.http.get<IUserModel[]>(this.accessPointUrl, { headers: this.headers });
+  }
+  public getcurentUsers() {
+    console.log(this.accessPointUrl + "/CurrentUser");
+    return this.http.get<IUserModel>(this.accessPointUrl +"/CurrentUser", { headers: this.headers });
   }
   public getUser(id: number) {
     console.log("ID::::" + id);
-    return this.http.get<UserModel>(this.accessPointUrl + '/' + id, { headers: this.headers });
+    return this.http.get<IUserModel>(this.accessPointUrl + '/' + id, { headers: this.headers });
 
   }
   public add(payload) {
@@ -38,7 +42,7 @@ export class UserService {
 
 
 }
-export interface UserModel {
+export interface IUserModel {
   id: number;
   recordStatusId: number;
   userName: string;
